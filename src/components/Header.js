@@ -1,14 +1,23 @@
 import React from "react";
 import SearchBar from "../features/searchBar/SearchBar";
+import { Link, useNavigate } from "react-router-dom";
+
 
 export default function Header() {
+    const navigate = useNavigate();
+    const handleBack = () => navigate(-1);
+    
     return (
-        <nav>
-            <button>
-                Back
-            </button>
-            <img />
-            <SearchBar />
-        </nav>
+        <>
+            <nav className="nav-bar">
+                <button onClick={handleBack}>
+                    Back
+                </button>
+                <Link to='/'>
+                    <img className="nav-bar-img" />
+                </Link>
+                <SearchBar />
+            </nav>
+        </>
     )
 }

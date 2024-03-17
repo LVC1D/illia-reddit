@@ -7,7 +7,50 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid ;
+  background-color: #edede9;
+}
+
+.nav-bar-img {
+  width: 60px;
+  height: 60px;
+  background-image: url('./app/resources/reddit-icon-new-2023-logo-3F12137D65-seeklogo.com.png');
+  background-size:cover;
+  background-position:center;
+  border: none;
+  alt: "reddit logo";
+}
+
+.preview-posts {
+  position: relative;
+  top: 50px;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 2% 5%;
+}
+
+.preview-els {
+  border-radius: 12px;
+  background-color: #343a40;
+  color: #edede9;
+}
+
+.preview-posts-each {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.preview-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

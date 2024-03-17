@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, createSelector } from "@reduxjs/toolkit";
 
 export const fetchPosts = createAsyncThunk(
     'posts/fetchPosts',
@@ -38,4 +38,5 @@ export const postsSlice = createSlice({
 
 export default postsSlice.reducer;
 export const selectPosts = state => state.posts.data.children;
-export const isLoadingPosts = state => state.isLoadingPosts;
+export const isLoadingPosts = state => state.posts.isLoadingPosts;
+
