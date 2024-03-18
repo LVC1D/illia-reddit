@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-// Define the async thunk function to load a specific post
 export const loadCurrentPost = createAsyncThunk(
     'currentPost/loadCurrentPost',
     async ({subPrefix, postId}, thunkAPI) => {
@@ -14,14 +13,12 @@ export const loadCurrentPost = createAsyncThunk(
     }
 );
 
-// Define the initial state of the currentPost slice
 const initialState = {
-    post: null,
+    post: [],
     isLoadingPost: false,
     hasError: false,
 };
 
-// Create the currentPost slice
 export const currentPostSlice = createSlice({
     name: 'currentPost',
     initialState,
@@ -35,19 +32,17 @@ export const currentPostSlice = createSlice({
             .addCase(loadCurrentPost.rejected, (state) => {
                 state.isLoadingPost = false;
                 state.hasError = true;
+                state.post = [];
             })
             .addCase(loadCurrentPost.fulfilled, (state, action) => {
                 state.isLoadingPost = false;
                 state.hasError = false;
-                const postData = action.payload?.[0]?.data?.children?.[0]?.data || null;
-                state.post = postData;
+                state.post = action.payload;
             });
     },
 });
 
-// Export the reducer function
-export default currentPostSlice.reducer;
 
-// Selectors
+export default currentPostSlice.reducer;
 export const selectPost = (state) => state.currentPost.post;
 export const isLoadingPost = (state) => state.currentPost.isLoadingPost;

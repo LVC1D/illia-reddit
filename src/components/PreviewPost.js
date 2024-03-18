@@ -4,21 +4,9 @@ import ROUTES from "../app/routes";
 import { loadCurrentPost } from "../features/currentPost/currentPostSlice";
 import { useDispatch } from "react-redux";
 import {loadProfile} from "../features/profile/profileSlice"
+import { getTimeDifference } from "../app/helper";
 
 export default function PreviewPost({post}) {
-    const getTimeDifference = (timestamp) => {
-        const currentTime = Math.floor(Date.now() / 1000);
-        const timeDifferenceSeconds = currentTime - timestamp;
-        if (timeDifferenceSeconds < 60) {
-          return `${timeDifferenceSeconds} seconds ago`;
-        } else if (timeDifferenceSeconds < 3600) {
-          const minutes = Math.floor(timeDifferenceSeconds / 60);
-          return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
-        } else {
-          const hours = Math.floor(timeDifferenceSeconds / 3600);
-          return `${hours} hour${hours > 1 ? 's' : ''} ago`;
-        }
-    };
     
     const dispatch = useDispatch();
     const showPost = () => {
@@ -32,8 +20,7 @@ export default function PreviewPost({post}) {
       dispatch(loadProfile(userProfile));
     }
 
-    return (
-        
+    return ( 
           <button className="preview-els" onClick={showPost}>
             <div>
                 <h2>{post.data.title}</h2>
@@ -42,8 +29,8 @@ export default function PreviewPost({post}) {
             {post.data.thumbnail && <img src={post.data.thumbnail} />}
             <div className="preview-posts-each">
                 <div onClick={showProfile}>
-                  <Link to={ROUTES.profile(post.data.author)}>
-                    Posted by {post.data.author}
+                  <Link to={ROUTES.profile(post.data.author)} className="profile-nick">
+                    <p>Posted by {post.data.author}</p>
                   </Link>
                 </div>
                 <p>{post.data.ups} likes</p>

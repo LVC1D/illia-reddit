@@ -20,6 +20,20 @@ body {
   background-color: #edede9;
 }
 
+.nav-bar-back {
+  background-color: #ff6314;
+  color: #fff;
+  width: 5.2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.nav-bar-back:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .nav-bar-img {
   width: 60px;
   height: 60px;
@@ -47,10 +61,35 @@ body {
 .preview-posts-each {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .preview-title {
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.profile-nick {
+  color: #fff;
+  font-style: italic;
+  border-bottom: #ff6314;
+}
+
+.profile-nick:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #92bddf
+}
+
+.profile-nick:visited {
+  color: #92bddf 
+}
+
+.comments {
+  border-bottom: 1px solid rgba(129, 133, 137, 0.6);
+}
+
+.replies {
+  margin-left: 4rem;
+  font-style: italic;
 }

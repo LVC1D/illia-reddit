@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <>
             <nav className="nav-bar">
-                <button onClick={handleBack}>
+                <button onClick={handleBack} className="nav-bar-back">
                     Back
                 </button>
                 <Link to='/'>
