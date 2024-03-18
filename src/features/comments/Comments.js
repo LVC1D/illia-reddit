@@ -5,6 +5,11 @@ export default function Comments({comment}) {
     return (
         <div key={comment.data.id}>
             <section className="comments">
+                <div className="image-container">
+                {comment.data.url_overridden_by_dest ? (
+                    <img src={comment.data.url_overridden_by_dest} alt="" className="post-image" />
+                ) : null}
+                </div>
                 <p>{comment.data.body}</p>
                 <div className="preview-posts-each">
                     <p>by {comment.data.author}</p>

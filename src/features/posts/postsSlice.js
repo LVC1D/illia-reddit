@@ -1,9 +1,18 @@
-import { createSlice, createAsyncThunk, createSelector } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchPosts = createAsyncThunk(
     'posts/fetchPosts',
     async() => {
         const response = await fetch('https://www.reddit.com/.json');
+        const json = await response.json();
+        return json;
+    }
+)
+
+export const fetchFromSearch = createAsyncThunk(
+    'posts/fetchFromSearch',
+    async(term, thunkAPI) => {
+        const response = await fetch(`https://www.reddit.com/search.json?q=${term}`);
         const json = await response.json();
         return json;
     }
@@ -17,6 +26,8 @@ export const postsSlice = createSlice({
         },
         isLoadingPosts: false,
         hasError: false,
+        isSearching: false,
+        hasSearchError: false,
     },
     extraReducers: (builder) => {
         builder
@@ -32,7 +43,20 @@ export const postsSlice = createSlice({
                 state.isLoadingPosts = false
                 state.hasError = false
                 state.data.children = action.payload.data.children;
-            }) 
+            })
+            .addCase(fetchFromSearch.pending, (state) => {
+                state.isSearching = true
+                state.hasSearchError = false
+            })
+            .addCase(fetchFromSearch.rejected, (state) => {
+                state.isSearching = false
+                state.hasSearchError = true
+            })
+            .addCase(fetchFromSearch.fulfilled, (state, action) => {
+                state.isSearching = false
+                state.hasSearchError = false
+                state.data.children = action.payload.data.children;
+            })
     }
 })
 

@@ -7,14 +7,12 @@ export default function LoadingState() {
     
     return (
         <div className="loading-posts">
+            <h2 className="loading-h2">Loading stuff...</h2>
             {posts.map(post => (
-                <div className="loading-els">
-                    <div>
-                        <h2>Loading stuff...</h2>
-                    </div>
-                    <img className="loading-image" />
+                <div className="loading-els" key={post.data.id}>
+                    <p>...</p>
                     <div className="loading-each">
-                        <p></p>
+                        <p>by... </p>
                         <p> likes</p>
                         <p>&uarr;</p>
                         <p>&darr;</p>

@@ -26,6 +26,11 @@ export default function FullPost() {
           <h1>Here's what {originalPost.data.children[0].data.author} is saying:</h1>
           <div>
             <h2>{originalPost.data.children[0].data.title}</h2>
+            <div className="image-container">
+              {originalPost.data.children[0].data.url_overridden_by_dest ? (
+                  <img src={originalPost.data.children[0].data.url_overridden_by_dest} alt="" className="post-image" />
+              ) : null}
+            </div>
             <p>{originalPost.data.children[0].data.body}</p>
           </div>
           {postComments.map(comment => (

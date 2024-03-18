@@ -26,7 +26,11 @@ export default function PreviewPost({post}) {
                 <h2>{post.data.title}</h2>
                 <p>{getTimeDifference(post.data.created_utc)}</p>
             </div>
-            {post.data.thumbnail && <img src={post.data.thumbnail} />}
+            <div className="image-container">
+              {post.data.url_overridden_by_dest ? (
+                  <img src={post.data.url_overridden_by_dest} alt="" className="post-image" />
+              ) : null}
+            </div>
             <div className="preview-posts-each">
                 <div onClick={showProfile}>
                   <Link to={ROUTES.profile(post.data.author)} className="profile-nick">
