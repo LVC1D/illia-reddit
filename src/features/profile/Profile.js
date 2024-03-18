@@ -1,16 +1,21 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {selectProfile, isLoadingProfile} from "./profileSlice";
+import { useSelector } from "react-redux";
+import {selectProfile, isLoadingProfile, profileError} from "./profileSlice";
 import { getTimeDifference } from "../../app/helper";
-import { loadCurrentPost } from "../currentPost/currentPostSlice";
+import { Navigate } from "react-router-dom";
+import ROUTES from "../../app/routes";
+import LoadingState from "../../components/LoadingState";
 
 export default function Profile() {
   const currentProfile = useSelector(selectProfile);
   const isLoadingAuthor = useSelector(isLoadingProfile);
-  const dispatch = useDispatch();
 
   if (isLoadingAuthor) {
-    return <h1>Loading profile data...</h1>
+    return <LoadingState />;
+  } else if (profileError) {
+    <div>
+      <Navigate to={ROUTES.error()} />
+    </div>
   }
 
   // const showPost = () => {

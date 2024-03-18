@@ -56,12 +56,16 @@ body {
   border-radius: 12px;
   background-color: #343a40;
   color: #edede9;
+  border: none;
+  margin: 0.5rem auto;
+  width: 100%;
 }
 
 .preview-posts-each {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: auto 5%;
 }
 
 .preview-title {
@@ -85,6 +89,14 @@ body {
   color: #92bddf 
 }
 
+.full-post {
+  position: relative;
+  top: 50px;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 2% 10%;
+}
+
 .comments {
   border-bottom: 1px solid rgba(129, 133, 137, 0.6);
 }
@@ -92,4 +104,34 @@ body {
 .replies {
   margin-left: 4rem;
   font-style: italic;
+}
+
+.loading-posts {
+  position: relative;
+  top: 50px;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 2% 5%;
+}
+
+.loading-els {
+  border-radius: 12px;
+  background-color: #d7d7d7;
+  border: none;
+  margin: 0.5rem auto;
+  width: 100%;
+}
+
+.loading-image {
+  background-image: url('./app/resources/loading_circle.gif');;
+  width: 100px;
+  height: auto;
+  background-size: cover;
+}
+
+.loading-each {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 5%;
 }

@@ -44,3 +44,4 @@ export const profileSlice = createSlice({
 export default profileSlice.reducer;
 export const selectProfile = state => state.profile.userProfile.data.children;
 export const isLoadingProfile = state => state.profile.isLoadingProfile;
+export const profileError = state => state.profile.hasError;

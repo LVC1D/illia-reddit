@@ -5,6 +5,7 @@ import Root from '../components/Root';
 import Posts from '../features/posts/Posts';
 import FullPost from '../components/FullPost';
 import Profile from '../features/profile/Profile';
+import ErrorPage from '../components/ErrorPage';
 import { store } from './store';
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -12,6 +13,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<Posts/>} />
     <Route path='posts/:id/comments' element={<FullPost/>} />
     <Route path='author/:name' element={<Profile/>} />
+    <Route path='error-not-found' element={<ErrorPage/>} />
   </Route>
 ))
 

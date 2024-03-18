@@ -46,3 +46,4 @@ export const currentPostSlice = createSlice({
 export default currentPostSlice.reducer;
 export const selectPost = (state) => state.currentPost.post;
 export const isLoadingPost = (state) => state.currentPost.isLoadingPost;
+export const postError = state => state.currentPost.hasError;

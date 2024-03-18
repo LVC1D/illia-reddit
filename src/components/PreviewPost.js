@@ -38,7 +38,6 @@ export default function PreviewPost({post}) {
                 <p>&darr;</p>
                 <p>{[post.data.num_comments]} comments</p>
             </div>
-          </button>
-        
+          </button> 
     )
 }
