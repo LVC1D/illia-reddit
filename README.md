@@ -72,7 +72,7 @@ by *LVC1D*
 
 ## Acknowledgements
 
-+ ![React](https://react.dev)
-+ ![Redux Toolkit](https://redux-toolkit.js.org)
-+ ![React Router](https://reactrouter.com/en/main)
-+ ![Reddit](https://reddit.com) - Inspiration for the project :smile:
++ [React](https://react.dev)
++ [Redux Toolkit](https://redux-toolkit.js.org)
++ [React Router](https://reactrouter.com/en/main)
++ [Reddit](https://reddit.com) - Inspiration for the project :smile:
