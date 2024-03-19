@@ -10,6 +10,8 @@ Mini Reddit is a simplified version of the popular social news aggregation and d
 
 + View User Profiles: Clicking on the author of a post redirects the user to the pathway of the selected user, where they can view up to 25 posts or comments posted by that user.
 
++ Searching: When you enter a search query and hit Search -> you will receive a new feed of 25 posts. The moment you hit `X`, the app automatically loads the most recent post from within the last 24 hours.
+
 ## Technologies Used
 
 + React: A JavaScript library for building user interfaces.
