@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,57 +9,125 @@ body {
 .nav-bar {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 4.7rem;
   z-index: 10;
   position: fixed;
   top: 0;
-  border-bottom: 1px solid ;
+  left: 0;
+  border-bottom: 1px solid rgba(129, 133, 137, 0.6);
   background-color: #edede9;
 }
 
-.nav-bar-back {
+/* Search */
+
+.nav-bar-button {
   background-color: #ff6314;
   color: #fff;
   width: 5.2rem;
   height: 2rem;
   border: none;
   border-radius: 5px;
+  margin: 0 1rem;
+  font-size: 0.9rem;
 }
 
-.nav-bar-back:hover {
+.nav-bar-button:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
+#form {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#search-container {
+  position: relative;
+}
+
+.search-input {
+  width: 15rem;
+  height: 2rem;
+  border: solid 1px rgba(129, 133, 137, 0.6);
+  border-radius: 5px; 
+  padding: 9px 25px 9px 40px;
+  font-size: 0.9rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-input::placeholder {
+  font-weight: bold;
+  color: #8a8e9d;
+}
+
+#search-icon {
+  opacity: 0.5;
+  position: absolute;
+  top: 9px;
+  left: 12px;
+}
+
+#search-clear-button {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  bottom: 3px;
+  border: 0;
+  background: none;
+  color: #141c3a;
+  margin: 0;
+  padding: 0 10px;
+  border-radius: 100px;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
 .nav-bar-img {
-  width: 60px;
-  height: 60px;
-  background-image: url('./app/resources/reddit-icon-new-2023-logo-3F12137D65-seeklogo.com.png');
+  width: 180px;
+  height: 80px;
+  background-image: url('./app/resources/reddit_header.png');
   background-size:cover;
-  background-position:center;
-  border: none;
+  background-position:initial;
   alt: "reddit logo";
 }
 
+/* Posts */
+
 .preview-posts {
   position: relative;
-  top: 50px;
+  top: 65px;
   display: flex;
   flex-flow: column wrap;
   margin: 2% 5%;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .preview-els {
-  border-radius: 12px;
-  background-color: #343a40;
-  color: #edede9;
   border: none;
   margin: 0.5rem auto;
   width: 100%;
+  
   height: 100%;
   box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0);  
+  border-bottom: 1px solid rgba(129, 133, 137, 0.6);
+}
+
+.preview-h2 {
+  font-size: 1.4rem;
+  text-align: left;
+}
+
+.preview-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 5%;
 }
 
 .preview-posts-each {
@@ -68,26 +135,33 @@ body {
   align-items: center;
   justify-content: space-between;
   margin: 25px 5%;
+  font-size: 0.8rem;
 }
 
-.preview-title {
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.preview-rest {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.preview-rest p {
+  margin: 0 1rem;
 }
 
 .image-container {
   max-width: 100%;
   max-height: 100%;
+  padding: 1.3rem;
 }
 
 .post-image {
   max-width: 500px;
   min-width: 350px;
   height: auto;
+  border-radius: 10px;
 }
 
 .profile-nick {
-  color: #fff;
+  color: #5296dd;
   font-style: italic;
   border-bottom: #ff6314;
 }
@@ -95,16 +169,24 @@ body {
 .profile-nick:hover {
   cursor: pointer;
   text-decoration: underline;
-  color: #92bddf
+  color: #ff6314;
+  font-weight: bold;
+  font-size: 0.8rem;
 }
 
 .profile-nick:visited {
   color: #92bddf 
 }
 
+.profile-nick:active {
+  text-decoration: none;
+}
+
+/* Full Post */
+
 .full-post {
   position: relative;
-  top: 50px;
+  top: 65px;
   display: flex;
   flex-flow: column wrap;
   margin: 2% 10%;
@@ -119,9 +201,11 @@ body {
   font-style: italic;
 }
 
+/* Loading State */
+
 .loading-posts {
   position: relative;
-  top: 50px;
+  top: 65px;
   display: flex;
   flex-flow: column wrap;
   margin: 2% 5%;

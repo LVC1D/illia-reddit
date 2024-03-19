@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Mini Reddit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Mini Reddit is a simplified version of the popular social news aggregation and discussion website Reddit. This application allows users to browse recent posts, view post details, comments, and navigate through user profiles.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
++ View Recent Posts: Mini Reddit loads up to 25 recent posts posted within the last 24 hours.
 
-### `npm start`
++ View Post Details: Clicking on a post redirects the user to the post's dedicated page, where they can view its details and comments.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
++ View User Profiles: Clicking on the author of a post redirects the user to the pathway of the selected user, where they can view up to 25 posts or comments posted by that user.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
++ React: A JavaScript library for building user interfaces.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
++ React-Redux: Official React bindings for Redux, a predictable state container for JavaScript apps.
 
-### `npm run build`
++ Redux Toolkit: The official, opinionated, batteries-included toolset for efficient Redux development.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
++ React Router: Declarative routing for React applications, enabling navigation between different components.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+```bash
+git clone <repository-url>
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Navigate to the project directory:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+cd mini-reddit
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Install dependencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+```
 
-## Learn More
+4. Start the development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. It will automatically redirect you to ![http://localhost:3000](http://localhost:3000)
 
-### Code Splitting
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Browse Recent Posts: On the homepage, view the list of recent posts.
 
-### Analyzing the Bundle Size
+- View Post Details: Click on a post to view its details and comments.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- View User Profiles: Click on the author of a post to view their profile and posts/comments.
 
-### Making a Progressive Web App
+- Search posts: Enter any search query, hit *Search* and see your new interactable posts rendered
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Note**: The search feature only works on the homepage
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### Deployment
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+by *LVC1D*
 
-### `npm run build` fails to minify
+## Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
++ ![React](https://react.dev)
++ ![Redux Toolkit](https://redux-toolkit.js.org)
++ ![React Router](https://reactrouter.com/en/main)
++ ![Reddit](https://reddit.com) - Inspiration for the project :smile:

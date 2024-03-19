@@ -5,29 +5,30 @@ export default function Comments({comment}) {
     return (
         <div key={comment.data.id}>
             <section className="comments">
-                <div className="image-container">
-                {comment.data.url_overridden_by_dest ? (
-                    <img src={comment.data.url_overridden_by_dest} alt="" className="post-image" />
-                ) : null}
-                </div>
                 <p>{comment.data.body}</p>
                 <div className="preview-posts-each">
                     <p>by {comment.data.author}</p>
-                    <p>{getTimeDifference(comment.data.created_utc)}</p>
-                    <p>{comment.data.ups} upvotes</p>
-                    <p>&uarr;</p>
-                    <p>&darr;</p>
+                    <div className="preview-rest">
+                        <p>{getTimeDifference(comment.data.created_utc)}</p>
+                        <p>{comment.data.ups} upvotes</p>
+                        <p>&uarr;</p>
+                        <p>&darr;</p>
+                    </div>
                 </div>
-                <h3 className="replies">Replies:</h3>
-                {comment.data.replies && 
-                    <div className="replies">
-                        <p>{comment.data.replies.data.children[0].data.body}</p>
-                        <div className="preview-posts-each">
-                            <p>by {comment.data.replies.data.children[0].data.author}</p>
-                            <p>{getTimeDifference(comment.data.replies.data.children[0].data.created_utc)}</p>
-                            <p>{comment.data.replies.data.children[0].data.ups} upvotes</p>
-                            <p>&uarr;</p>
-                            <p>&darr;</p>
+                {comment.data.replies && comment.data.replies.data.children[0].data.author &&
+                    <div>
+                        <h3 className="replies">Replies:</h3>
+                        <div className="replies">
+                            <p>{comment.data.replies.data.children[0].data.body}</p>
+                            <div className="preview-posts-each">
+                                <p>by {comment.data.replies.data.children[0].data.author}</p>
+                                <div className="preview-rest">
+                                    <p>{getTimeDifference(comment.data.replies.data.children[0].data.created_utc)}</p>
+                                    <p>{comment.data.replies.data.children[0].data.ups} upvotes</p>
+                                    <p>&uarr;</p>
+                                    <p>&darr;</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 }

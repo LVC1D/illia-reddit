@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectPosts, fetchPosts, fetchFromSearch } from "./postsSlice";
+import { selectPosts, fetchPosts } from "./postsSlice";
 import PreviewPost from "../../components/PreviewPost";
 import { Link } from "react-router-dom";
 import ROUTES from "../../app/routes";
@@ -13,11 +13,9 @@ export default function Posts() {
 
     useEffect(() => {
         if (searchTerm.length === 0) {
-            dispatch(fetchPosts());
+            dispatch(fetchPosts())
         }
-        dispatch(fetchFromSearch(searchTerm))
-    }, [dispatch, searchTerm]);
-
+    }, [dispatch, searchTerm])
 
     return (
         <div className="preview-posts">
