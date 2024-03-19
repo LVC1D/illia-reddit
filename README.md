@@ -48,7 +48,7 @@ npm install
 npm start
 ```
 
-5. It will automatically redirect you to ![http://localhost:3000](http://localhost:3000)
+5. It will automatically redirect you to [http://localhost:3000](http://localhost:3000)
 
 ## Usage
 
