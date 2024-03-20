@@ -207,7 +207,7 @@ body {
   top: 65px;
   display: flex;
   flex-flow: column wrap;
-  margin: 2% 5%;
+  margin: 2% 1%;
 }
 
 .loading-els {
@@ -261,7 +261,7 @@ body {
   align-items: center;
   justify-content: space-between;
   margin: 2% 5%;
-  color: rgba(0, 0, 0, 0.4)
+  color: rgba(0, 0, 0, 0.4);
 }
 
 /* Media Responsive */
@@ -304,6 +304,39 @@ body {
   .preview-posts {
     top: 50px;
     margin: 2% auto;
+  }
+
+  .preview-h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .preview-posts-each {
+    justify-content: space-between;
+    margin: 15px 2%;
+    font-size: 0.8rem;
+  }
+
+  .full-post {
+    top: 50px;
+    margin: 1% auto;
+  }
+  
+  .replies {
+    margin-left: 2.4rem;
+  }
+
+  .loading-posts {
+    top: 50px;
+    margin: 2% auto;
+  }
+
+  .loading-h2, .loading-els {
+    padding-left: 5px;
+  }
+  
+  .loading-each {
+    margin: 2% 2%;
   }
 
 }
