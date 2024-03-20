@@ -261,7 +261,7 @@ body {
   align-items: center;
   justify-content: space-between;
   margin: 2% 5%;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.4);;
 }
 
 /* Media Responsive */
@@ -349,4 +349,8 @@ body {
     font-size: 0.8rem;
   }
   
+  .search-input::placeholder {
+    font-weight: bold;
+    color: #8a8e9d;
+  }
 }
