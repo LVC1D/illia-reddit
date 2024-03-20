@@ -9,9 +9,11 @@ export default function Header() {
     return (
         <>
             <nav className="nav-bar">
-                <Link to='/'>
-                    <img className="nav-bar-img" />
-                </Link>
+                <div classame="home-container">
+                    <Link to='/'>
+                        <img className="nav-bar-img" />
+                    </Link>
+                </div>
                 <SearchBar />
             </nav>
         </>

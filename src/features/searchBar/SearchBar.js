@@ -23,8 +23,8 @@ export default function SearchBar() {
 
     return (
         <form onSubmit={searchResults} id="form">
-            <button onClick={handleBack} className="nav-bar-button">
-            &larr; Back
+            <button onClick={handleBack} className="nav-bar-button" id="back">
+            &larr; <span>Back</span>
             </button>
             <div id="search-container">
                 <img id="search-icon" alt="" src={searchIconUrl} />
@@ -44,7 +44,7 @@ export default function SearchBar() {
                     </button>
                 )}
             </div>
-            <button type="submit" className="nav-bar-button">
+            <button type="submit" className="nav-bar-button" id="search">
                 Search
             </button>
         </form>
